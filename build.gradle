@@ -1,16 +1,19 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.5'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'java-library'
+	id 'maven-publish'
 }
 
 group = 'net.aggregatebusiness.transactionpoint'
-version = '0.0.1-SNAPSHOT'
+version = 'master-SNAPSHOT'
 
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
+
+	withSourcesJar()
+	withJavadocJar()
 }
 
 repositories {
@@ -26,4 +29,28 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jar {
+	enabled = true
+	archiveBaseName.set("tpinternetbanking_migration_app")
+	archiveVersion.set("${version}")
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+
+			groupId = 'com.github.transactionpoint'
+			artifactId = 'tpinternetbanking_migration_app'
+			version = 'master-SNAPSHOT'
+
+			pom {
+				name = 'TP Internet Banking Migration Library'
+				description = 'Core logic reused from TP internet banking migration application'
+				url = 'https://github.com/transactionpoint/tpinternetbanking_migration_app'
+			}
+		}
+	}
 }
