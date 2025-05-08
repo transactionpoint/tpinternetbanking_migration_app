@@ -6,6 +6,4 @@
     <property name="current_datetime" value="NOW()"/>
     <include file="init/01_db_schemas.sql" relativeToChangelogFile="true"/>
     <include file="init/02_db_data.sql" relativeToChangelogFile="true"/>
-<!--    <include file="version1/01_db_schemas.sql" relativeToChangelogFile="true"/>-->
-<!--    <include file="version1/02_db_data.sql" relativeToChangelogFile="true"/>-->
 </databaseChangeLog>
