@@ -1,3 +1,6 @@
+--liquibase formatted sql
+
+
 --changeset ABS:AddedBulkTransferApprovalPermission
 INSERT IGNORE INTO permissions(id, uuid, name, authority, deleted, description, date_created, resource_id, permission_type)
 VALUES

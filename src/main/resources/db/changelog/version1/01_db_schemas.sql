@@ -1,3 +1,6 @@
+--liquibase formatted sql
+
+
 --changeset ABS:CreateTransferApprovalTable
 CREATE TABLE transfer_approvals (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
