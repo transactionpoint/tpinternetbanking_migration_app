@@ -55,3 +55,13 @@ ALTER TABLE users
 
 ALTER TABLE clients
     MODIFY COLUMN gender VARCHAR(50) NULL;
+
+
+--changeset ABS:CreateWebSocketConnectionsTable
+CREATE TABLE websocket_connections (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    principal_id VARCHAR(170) NOT NULL,
+    connection_id VARCHAR(50) NOT NULL,
+    created_at BIGINT,
+    session_attributes TEXT
+);
