@@ -45,6 +45,13 @@ CREATE TABLE test_table (
     created_at TIMESTAMP
 );
 
-
 --changeset ABS:DropTestTable
 DROP TABLE test_table;
+
+--changeset ABS:ModifiedFirstNameAndLastNameColumnsToNullOnUsersTableAndGenderColumnToNullOnClientsTable
+ALTER TABLE users
+    MODIFY COLUMN first_name VARCHAR(150) NULL,
+    MODIFY COLUMN last_name VARCHAR(150) NULL;
+
+ALTER TABLE clients
+    MODIFY COLUMN gender VARCHAR(50) NULL;
