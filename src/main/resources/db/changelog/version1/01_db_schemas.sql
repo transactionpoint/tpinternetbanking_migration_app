@@ -42,5 +42,5 @@ CREATE TABLE test_table (
     mandate_type VARCHAR(50) NOT NULL,
     client_id BIGINT NOT NULL,
     required_count INTEGER NULL,
-    created_at TIMESTAMP,
+    created_at TIMESTAMP
 );
