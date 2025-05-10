@@ -44,3 +44,7 @@ CREATE TABLE test_table (
     required_count INTEGER NULL,
     created_at TIMESTAMP
 );
+
+
+--changeset ABS:DropTestTable
+DROP TABLE test_table;
