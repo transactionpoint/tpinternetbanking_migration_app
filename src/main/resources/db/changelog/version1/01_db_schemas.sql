@@ -65,3 +65,7 @@ CREATE TABLE websocket_connections (
     created_at BIGINT,
     session_attributes TEXT
 );
+
+--changeset ABS:ModifiedAddressColumnToNullableOnClientsTable
+ALTER TABLE clients
+    MODIFY COLUMN address VARCHAR(255) NULL;
