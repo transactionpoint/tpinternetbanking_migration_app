@@ -69,3 +69,10 @@ CREATE TABLE websocket_connections (
 --changeset ABS:ModifiedAddressColumnToNullableOnClientsTable
 ALTER TABLE clients
     MODIFY COLUMN address VARCHAR(255) NULL;
+
+
+--changeset ABS:ModifiedStateOfResidenceAndEmploymentStatusAndMaritalStatusColumnToNullableOnClientsTable
+ALTER TABLE clients
+    MODIFY COLUMN state_of_residence VARCHAR(255) NULL,
+    MODIFY COLUMN employment_status VARCHAR(70) NULL,
+    MODIFY COLUMN marital_status VARCHAR(70) NULL;
