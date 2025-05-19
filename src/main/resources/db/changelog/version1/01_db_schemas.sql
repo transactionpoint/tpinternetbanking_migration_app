@@ -76,3 +76,8 @@ ALTER TABLE clients
     MODIFY COLUMN state_of_residence VARCHAR(255) NULL,
     MODIFY COLUMN employment_status VARCHAR(70) NULL,
     MODIFY COLUMN marital_status VARCHAR(70) NULL;
+
+
+--changeset ABS:AddedAccountNameToClientsTable
+ALTER TABLE clients
+    ADD COLUMN account_name VARCHAR(200) NULL;
