@@ -81,3 +81,11 @@ ALTER TABLE clients
 --changeset ABS:AddedAccountNameToClientsTable
 ALTER TABLE clients
     ADD COLUMN account_name VARCHAR(200) NULL;
+
+--changeset ABS:AddFieldsToBusinessClientInterBankTransferTable
+ALTER TABLE business_client_inter_bank_transfer_detail
+    ADD COLUMN sent_to_tp_gateway_for_bulk_name_inquiry BOOLEAN DEFAULT FALSE,
+    ADD COLUMN approved_for_bulk_name_inquiry BOOLEAN DEFAULT FALSE,
+    ADD COLUMN name_inquiry_status VARCHAR (255) NULL,
+    ADD COLUMN valid_destination_account_name VARCHAR(255),
+    ADD COLUMN deleted BOOLEAN DEFAULT FALSE;
