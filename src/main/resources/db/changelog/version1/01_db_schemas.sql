@@ -89,3 +89,33 @@ ALTER TABLE business_client_inter_bank_transfer_detail
     ADD COLUMN name_inquiry_status VARCHAR (255) NULL,
     ADD COLUMN valid_destination_account_name VARCHAR(255),
     ADD COLUMN deleted BOOLEAN DEFAULT FALSE;
+
+
+--changeset ABS:CreateUtilityVendingRequestLogs
+CREATE TABLE utility_vending_request_logs(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    vender BIGINT NOT NULL,
+    amount DECIMAL(20,2) NOT NULL,
+    source_account VARCHAR(10) NOT NULL,
+    utility_product_ype VARCHAR(25) NOT NULL,
+    utility_provider_title VARCHAR(10) NOT NULL,
+    utility_provider_code VARCHAR(10) NOT NULL,
+    client_id BIGINT NOT NULL,
+    vending_status VARCHAR(15) NOT NULL,
+    core_banking_transaction_id BIGINT NULL,
+    phone_number VARCHAR(20) NULL,
+    data_bundle_code VARCHAR(10) NULL,
+    cable_tv_smart_card_number VARCHAR(20) NULL,
+    cable_tv_smart_card_name VARCHAR(200) NULL,
+    cable_tv_bouquet_code VARCHAR(10) NULL,
+    cable_tv_bouquet_title VARCHAR(250) NULL,
+    electricity_meter_number VARCHAR(20) NULL,
+    electricity_meter_owner VARCHAR(200) NULL,
+    electricity_meter_owner_phone_number VARCHAR(20) NULL,
+    electricity_meter_owner_address VARCHAR(250) NULL,
+    electricity_meter_type VARCHAR(25) NULL,
+    date_created TIMESTAMP NOT NULL,
+    CONSTRAINT FK_UserVenderUtilityVendingRequestLog FOREIGN KEY (vender) REFERENCES users(id),
+    CONSTRAINT FK_ClientUtilityVendingRequestLog FOREIGN KEY (client_id) REFERENCES clients(id)
+);
+
