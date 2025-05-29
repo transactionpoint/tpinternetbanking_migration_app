@@ -119,3 +119,7 @@ CREATE TABLE utility_vending_request_logs(
     CONSTRAINT FK_ClientUtilityVendingRequestLog FOREIGN KEY (client_id) REFERENCES clients(id)
 );
 
+
+--changeset ABS:AddedReferenceColumnToUtilityVendingRequestLogs
+ALTER TABLE utility_vending_request_logs
+    ADD COLUMN reference VARCHAR(36) NULL;
