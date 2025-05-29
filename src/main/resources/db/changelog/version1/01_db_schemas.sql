@@ -123,3 +123,11 @@ CREATE TABLE utility_vending_request_logs(
 --changeset ABS:AddedReferenceColumnToUtilityVendingRequestLogs
 ALTER TABLE utility_vending_request_logs
     ADD COLUMN reference VARCHAR(36) NULL;
+
+
+--changeset ABS:ModifiedDataBundleCodeColumnUtilityProviderCodeColumnCableTvBouquetCodeColumnAndUtilityProviderTitleColumn
+ALTER TABLE utility_vending_request_logs
+    MODIFY COLUMN data_bundle_code VARCHAR(25) NULL,
+    MODIFY COLUMN utility_provider_code VARCHAR(20) NOT NULL,
+    MODIFY COLUMN  utility_provider_title VARCHAR(45) NOT NULL,
+    MODIFY COLUMN cable_tv_bouquet_code VARCHAR(25) NULL;
