@@ -139,4 +139,4 @@ ALTER TABLE users
     ADD COLUMN deactivated_by VARCHAR(150) NULL,
     ADD COLUMN date_activated TIMESTAMP NULL,
     ADD COLUMN date_deactivated TIMESTAMP NULL,
-    AND COLUMN date_deleted TIMESTAMP NULL;
+    ADD COLUMN date_deleted TIMESTAMP NULL;
