@@ -131,3 +131,12 @@ ALTER TABLE utility_vending_request_logs
     MODIFY COLUMN utility_provider_code VARCHAR(20) NOT NULL,
     MODIFY COLUMN  utility_provider_title VARCHAR(45) NOT NULL,
     MODIFY COLUMN cable_tv_bouquet_code VARCHAR(25) NULL;
+
+
+--changeset ABS:AddedActivatedByAndDeactivatedByAndDateActivatedAndDateDeactivatedAndDateDeletedColumnsToUsersTable
+ALTER TABLE users
+    ADD COLUMN activated_by VARCHAR(150) NULL,
+    ADD COLUMN deactivated_by VARCHAR(150) NULL,
+    ADD COLUMN date_activated TIMESTAMP NULL,
+    ADD COLUMN date_deactivated TIMESTAMP NULL,
+    AND COLUMN date_deleted TIMESTAMP NULL;
